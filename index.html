@@ -27,6 +27,17 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+<script>
+// Auto track all phone number clicks
+document.addEventListener('DOMContentLoaded', function() {
+  var links = document.querySelectorAll('a[href^="tel:"]');
+  links.forEach(function(link) {
+    link.addEventListener('click', function() {
+      gtag_report_conversion(this.href);
+    });
+  });
+});
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Expert Service &amp; Repair for Hafele Kitchen Chimneys in Ghaziabad</title>
